@@ -1,0 +1,16 @@
+{
+  "name": "Instituto Nuestra Señora de la Merced",
+  "short_name": "INSM",
+  "start_url": "/",
+  "display": "standalone",
+  "lang": "es-AR",
+  "theme_color": "#071a35",
+  "background_color": "#f7f9fc",
+  "icons": [
+    {
+      "src": "/img/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

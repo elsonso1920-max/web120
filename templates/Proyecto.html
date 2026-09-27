@@ -1,0 +1,76 @@
+<!doctype html>
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="Instituto Nuestra Señora de la Merced" name="author"/><meta content="strict-origin-when-cross-origin" name="referrer"/><title>Proyecto · INSM</title><meta name="description" content="Plantilla interna de proyecto del Instituto Nuestra Señora de la Merced."><link href="../img/favicon.ico" rel="icon"/><link href="../modern.css" rel="stylesheet"/><meta content="noindex,nofollow,noarchive" name="robots"/><link href="https://elsonso1920-max.github.io/webinsm/templates/Proyecto.html" rel="canonical"/><meta content="#071a35" name="theme-color"/>
+<link href="../site.webmanifest" rel="manifest"/>
+</head><body><div class="social-contact-bar"><div class="container social-contact-shell"><div class="social-group"><a aria-label="Instagram" href="https://www.instagram.com/mercedariasarroyito/" rel="noopener" target="_blank"><img alt="Instagram" decoding="async" loading="lazy" src="../img/social/instagram.webp" width="64" height="64"/> <span>Instagram</span></a><a aria-label="Facebook" href="https://www.facebook.com/estilomercedarioarroyito" rel="noopener" target="_blank"><img alt="Facebook" decoding="async" loading="lazy" src="../img/social/facebook.webp" width="64" height="64"/> <span>Facebook</span></a><a aria-label="WhatsApp" href="https://wa.me/5493576477049" rel="noopener" target="_blank"><img alt="WhatsApp" decoding="async" loading="lazy" src="../img/social/whatsapp.webp" width="64" height="64"/> <span>54 9 3576 47-7049</span></a></div><div class="contact-group"><a aria-label="Correo electrónico" href="mailto:gerardo.lemos@institutolamerced.edu.ar"><img alt="Gmail" decoding="async" loading="lazy" src="../img/social/gmail.webp" width="64" height="64"/> <span>gerardo.lemos@institutolamerced.edu.ar</span></a></div></div></div><div class="progress"></div><div class="cursor"></div><div class="topline"><div class="container"><span>INSM · Proyectos</span><span>Arroyito · Córdoba</span></div></div><header class="site-nav"><div class="container nav-shell"><a class="brand" href="../index.html"><img alt="INSM" class="brand-mark" decoding="async" loading="lazy" src="../img/logo.webp" width="745" height="1400"/><span class="brand-text">Instituto Nuestra Señora de la Merced<small>EDUCACIÓN · COMUNIDAD · FUTURO</small></span></a><nav class="nav-links"><a href="../NuestroColegio.html">Institución</a><a href="../index.html#niveles">Niveles</a><a href="../Proyectos.html">Proyectos</a><a class="nav-cta" href="../Contacto.html">Contacto ↗</a></nav><button aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle" type="button">☰</button></div></header><div class="mobile-menu" id="mobileMenu"><a href="../NuestroColegio.html">Institución</a><a href="../index.html#niveles">Niveles</a><a href="../Proyectos.html">Proyectos</a><a href="../Contacto.html">Contacto</a></div><main class="project-page"><div class="container" id="projectRoot"><div class="project-detail"><div><div class="eyebrow">INSM · Proyecto</div><h1>Cargando<br/><em>proyecto.</em></h1></div></div></div></main><section class="cta"><div class="container cta-grid"><div><div class="section-label">Más experiencias</div><h2>Volvé a<br/>proyectos.</h2></div><div><p>Explorá otras producciones y experiencias de nuestra comunidad educativa.</p><a class="btn" href="../Proyectos.html">Ver proyectos ↗</a></div></div></section><footer class="footer"><div class="container footer-grid"><div><div class="footer-brand">INSM</div><p>Instituto Nuestra Señora de la Merced.<br/>9 de Julio 465 · Arroyito, Córdoba.</p></div><div><h3>Niveles</h3><a href="../NivelInicial.html">Inicial</a><a href="../NivelPrimario.html">Primario</a><a href="../NivelSecundario.html">Secundario</a><a href="../NivelTerciario.html">Superior</a></div><div><h3>Explorar</h3><a href="../NuestroColegio.html">Institución</a><a href="../Proyectos.html">Proyectos</a><a href="../Contacto.html">Contacto</a></div></div><div class="container footer-bottom"><span>© INSM</span><span>Educación · Comunidad · Futuro</span></div></footer><script src="../site.js"></script><script src="data/proyectos-local.js"></script><script>
+const id = new URLSearchParams(location.search).get('id');
+const root = document.getElementById('projectRoot');
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+}
+function renderProject(p) {
+  if (!p) throw new Error('not found');
+  const g=p.general||{}, h=p.hero||{}, a=p.academic||{};
+  const gallery=Array.isArray(p.gallery)?p.gallery:[];
+  const videos=Array.isArray(p.videos)?p.videos:[];
+  const resources=Array.isArray(p.resources)?p.resources:[];
+  const galleryHtml=gallery.length ? `
+    <section class="section white project-gallery-section">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-label">Registro</div><h2 class="display">Así se <em>vivió.</em></h2></div>
+          <p class="section-intro">Imágenes y producciones de esta experiencia.</p>
+        </div>
+        <div class="projects project-gallery-grid">
+          ${gallery.map((item,i)=>{
+            const image=typeof item==='string'?item:item.image;
+            const title=typeof item==='string'?'Registro '+String(i+1).padStart(2,'0'):(item.title||'Registro '+String(i+1).padStart(2,'0'));
+            const description=typeof item==='string'?'':(item.description||'');
+            return `<div class="project-card project-gallery-card"><img src="${escapeHtml(image)}" alt="${escapeHtml(title)}" loading="lazy"><div class="project-body"><div class="project-meta"><span>Cortometraje</span><span>${String(i+1).padStart(2,'0')}</span></div><h3>${escapeHtml(title)}</h3>${description?`<p>${escapeHtml(description)}</p>`:''}</div></div>`;
+          }).join('')}
+        </div>
+      </div>
+    </section>` : '';
+  const videosHtml=videos.length ? `
+    <section class="section project-video-section">
+      <div class="container">
+        <div class="section-head"><div><div class="section-label">Material audiovisual</div><h2 class="display">Mirá los <em>cortos.</em></h2></div></div>
+        <div class="project-video-grid">${videos.map((src,i)=>`<div class="project-video-item"><iframe src="${escapeHtml(src)}" title="Video ${i+1}" loading="lazy" allowfullscreen></iframe></div>`).join('')}</div>
+      </div>
+    </section>` : '';
+  const resourcesHtml=resources.length ? `
+    <section class="section white project-resources-section"><div class="container"><div class="section-head"><div><div class="section-label">Enlaces</div><h2 class="display">Seguí <em>explorando.</em></h2></div></div><div class="project-resources">${resources.map(r=>`<a class="btn" href="${escapeHtml(r.url)}" target="_blank" rel="noopener"><i class="${escapeHtml(r.icon||'fas fa-link')}"></i> ${escapeHtml(r.title||'Ver enlace')} ↗</a>`).join('')}</div></div></section>` : '';
+  root.innerHTML=`
+    <div class="project-detail">
+      <div class="reveal visible"><div class="eyebrow">INSM · Proyecto</div><h1>${escapeHtml(h.titleLine1||p.title||'Proyecto')}<br><em>${escapeHtml(h.titleLine2||'')}</em></h1><p class="project-detail-text">${g.summary||''}</p><div class="project-meta-list"><div><strong>Fecha</strong><span>${escapeHtml(g.date||'')}</span></div><div><strong>Área</strong><span>${escapeHtml(a.value3||'INSM')}</span></div><div><strong>Participan</strong><span>${escapeHtml(a.value1||'')}</span></div><div><strong>Acompañamiento</strong><span>${escapeHtml(a.value2||'')}</span></div></div></div>
+      <div class="reveal visible delay-1"><img class="hero-img" src="${escapeHtml(g.image||h.backgroundImage||'../img/Convivencia.webp')}" alt="${escapeHtml(h.titleLine1||'Proyecto')}"></div>
+    </div>
+    <div class="section" style="padding-bottom:0"><div class="content-grid"><aside class="content-sticky"><div class="section-label">La experiencia</div><h2>Detrás del <em>proyecto.</em></h2></aside><div class="content-body">${g.detail||''}</div></div></div>
+    ${galleryHtml}${videosHtml}${resourcesHtml}`;
+  document.title=(h.titleLine1||p.title||'Proyecto')+' · INSM';
+}
+
+async function loadProject(){
+  if(!id){
+    root.innerHTML='<div class="content-body"><h2>Proyecto no seleccionado.</h2><p>Volvé a proyectos para elegir uno.</p><a class="btn btn-dark" href="../Proyectos.html">Volver a proyectos ↗</a></div>';
+    return;
+  }
+  try {
+    // Al abrir la web directamente desde la PC, usamos los datos locales.
+    if (window.INSM_PROJECTS && window.INSM_PROJECTS[id]) {
+      renderProject(window.INSM_PROJECTS[id]);
+      return;
+    }
+    // Cuando la web está publicada en un servidor, usamos el JSON real.
+    const response=await fetch('data/proyectos/'+encodeURIComponent(id)+'.json');
+    if(!response.ok) throw new Error('not found');
+    renderProject(await response.json());
+  } catch(error) {
+    console.error(error);
+    root.innerHTML='<div class="content-body"><h2>No se pudo cargar este proyecto.</h2><p>Revisá que exista su archivo JSON dentro de <strong>templates/data/proyectos/</strong>.</p><a class="btn btn-dark" href="../Proyectos.html">Volver a proyectos ↗</a></div>';
+  }
+}
+loadProject();
+</script></body></html>

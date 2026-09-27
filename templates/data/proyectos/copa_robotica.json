@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "titleLine1": "Copa",
+    "titleLine2": "Robótica",
+    "backgroundImage": "../img/Copa Robotica 1.webp"
+  },
+  "general": {
+    "date": "Proyecto institucional",
+    "summary": "Proyecto de robótica y tecnología en el que los estudiantes participan de la Copa Robótica, llevando sus aprendizajes del aula a una experiencia de desafío, creación y trabajo en equipo.",
+    "detail": "La Copa Robótica propone poner en práctica conocimientos de tecnología, programación, electrónica y resolución de problemas. El proyecto invita a los estudiantes a diseñar, construir, probar y mejorar sus propuestas, trabajando de manera colaborativa y aprendiendo a partir de cada desafío.<br><br>Las imágenes registran la participación del INSM en esta experiencia.",
+    "image": "../img/Copa Robotica 1.webp"
+  },
+  "academic": {
+    "value1": "Estudiantes del INSM",
+    "value2": "Comunidad educativa",
+    "value3": "Robótica y tecnología",
+    "icon3": "fas fa-robot"
+  },
+  "gallery": [
+    "../img/Copa Robotica 1.webp",
+    "../img/Copa Robotica 2.webp"
+  ]
+}

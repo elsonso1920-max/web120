@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "titleLine1": "Proyecto",
+    "titleLine2": "1",
+    "backgroundImage": "../img/Convivencia.webp"
+  },
+  "general": {
+    "date": "Proyecto institucional",
+    "summary": "Completá acá una breve descripción del Proyecto 1.",
+    "detail": "Completá acá la información completa del proyecto. Podés usar <br><br> para separar párrafos.",
+    "image": "../img/Convivencia.webp"
+  },
+  "academic": {
+    "value1": "Completá acá quiénes participan",
+    "value2": "Completá acá quiénes acompañan",
+    "value3": "Completá acá el área o espacio"
+  },
+  "gallery": []
+}

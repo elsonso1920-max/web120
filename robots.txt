@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /templates/data/
+Disallow: /PrismaWeb/
+
+# Add the production sitemap URL after the Vercel deployment URL is known.

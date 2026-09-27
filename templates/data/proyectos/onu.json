@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "titleLine1": "Proyecto",
+    "titleLine2": "ONU",
+    "backgroundImage": "../img/ONU 1.webp"
+  },
+  "general": {
+    "date": "Proyecto institucional",
+    "summary": "Una propuesta educativa vinculada con la Organización de las Naciones Unidas, pensada para investigar, debatir y asumir el rol de distintos actores frente a problemáticas del mundo actual.",
+    "detail": "El proyecto ONU acerca a los estudiantes a dinámicas de debate, investigación y representación, promoviendo la argumentación, la escucha y la construcción de acuerdos. La experiencia permite trabajar contenidos de distintas áreas mientras se desarrollan habilidades para expresarse, analizar problemáticas y participar activamente.<br><br>Las imágenes registran la participación del INSM en esta propuesta.",
+    "image": "../img/ONU 1.webp"
+  },
+  "academic": {
+    "value1": "Estudiantes del INSM",
+    "value2": "Comunidad educativa",
+    "value3": "Debate y ciudadanía",
+    "icon3": "fas fa-globe-americas"
+  },
+  "gallery": [
+    "../img/ONU 1.webp",
+    "../img/ONU 2.webp"
+  ]
+}

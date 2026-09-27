@@ -1,0 +1,47 @@
+INSM — versión optimizada para WebScore / Vercel
+
+QUÉ CAMBIÉ
+- Mantiene el concepto, textos y niveles Inicial, Primario, Secundario y Superior.
+- Mantiene proyectos, contacto, inscripciones y documentación.
+- Corregí dimensiones intrínsecas de imágenes para evitar layout shift.
+- Añadí versiones responsive 480/768 px para las imágenes principales.
+- Corregí preloads que apuntaban a imágenes distintas de las realmente mostradas.
+- Hice que el hero cargue prioritariamente y el resto de imágenes sea diferible.
+- Eliminé logs de consola de producción.
+- Eliminé FAQ JSON-LD duplicado de la portada.
+- Reforcé accesibilidad/reduced-motion y reduje efectos costosos en móvil.
+- Conservé y reforcé headers de seguridad de Vercel.
+- Añadí security.txt.
+- Añadí metadatos/robots para páginas utilitarias.
+
+PUBLICAR EN VERCEL SIN COMPRAR DOMINIO
+1. Entrá a https://vercel.com/ e iniciá sesión.
+2. Elegí Add New → Project.
+3. Subí este ZIP o importá el proyecto desde Git.
+4. No necesitás framework: es un sitio HTML/CSS/JS estático.
+5. Si Vercel pregunta por Build Command, dejalo vacío. Output Directory: ./
+6. Deploy.
+7. Vercel te dará una URL *.vercel.app. Esa URL es suficiente; no hace falta comprar dominio.
+
+IMPORTANTE PARA EL SEO
+Este proyecto conserva como URL canónica y sitemap:
+https://TU-PROYECTO.vercel.app/
+
+Si Vercel te asigna OTRA URL (por ejemplo, insm-xxx.vercel.app), antes de hacer el escaneo final cambiá esa URL en:
+- canonical de los HTML
+- og:url
+- URLs absolutas del JSON-LD
+- robots.txt
+- sitemap.xml
+
+Si vas a usar exactamente TU-PROYECTO.vercel.app, no cambies nada.
+
+PARA COMPROBAR EL PUNTAJE
+1. Publicá.
+2. Esperá unos segundos a que la URL esté disponible.
+3. Abrí https://webscore.ai/
+4. Escaneá la URL final de Vercel.
+5. Si el resultado cambia, hacé un nuevo scan después de unos minutos para evitar medir una versión anterior en caché.
+
+NOTA
+No puedo garantizar de antemano un 95/100 exacto porque WebScore puntúa una URL publicada con condiciones reales de red/navegador y su propia medición. La versión fue preparada para atacar los factores que WebScore declara evaluar: rendimiento, SEO, UX, analítica, seguridad y conversión.
